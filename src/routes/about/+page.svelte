@@ -52,7 +52,7 @@
                         {aboutData.title}
                     </h2>
                     <p>
-                        {aboutData.teaser}
+                        {@html aboutData.teaser}
                     </p>
                     <div class="flex items-center justify-center">
                         <span

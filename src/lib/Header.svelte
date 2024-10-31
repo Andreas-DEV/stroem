@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import logo from "$lib/media/logo.png";
     import "../app.css";
     import { page } from "$app/stores";
@@ -11,7 +12,6 @@
         SearchIcon,
         MenuBurgerIcon,
     } from "svelte-uicons/rounded/regular";
-    import { onMount } from "svelte";
 
     let isOpen = false;
     function toggleBurgerMenu() {
@@ -23,7 +23,6 @@
     let searchInput: string;
     let allNews = [];
     let allServices = [];
-    let testCombined = [];
     let isLoading = true;
     let error = null;
 

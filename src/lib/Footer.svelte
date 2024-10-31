@@ -31,7 +31,7 @@
 
             email = "";
 
-            alert("Du er nu tilmeldt vores nyhdesbrev!");
+            alert("Du er nu tilmeldt vores nyhedsbrevet!");
         } catch (error) {
             console.error("Fejl:", error);
         }

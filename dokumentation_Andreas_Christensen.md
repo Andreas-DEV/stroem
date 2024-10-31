@@ -29,9 +29,12 @@ https://svelte.dev/docs/kit/routing
 Har brugt stackoverflow som hjælp til sorteringen af dato'er i mit "SidsteNyt" komponent.
 https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property | Første kommentar.
 
+Har brugt flowbites accordion.
+https://flowbite-svelte.com/docs/components/accordion
+
 Tilvalgsopgaver -
 Søgefunktion
 Opret kommentar
 
 Github link -
-https://github.com/Andreas-DEV/eksamen
+https://github.com/Andreas-DEV/stroem

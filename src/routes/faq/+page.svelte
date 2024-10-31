@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <Accordion class="max-w-screen-lg mx-auto py-14">
+    <Accordion class="max-w-screen-lg mx-auto py-14 px-4">
         {#each faqData as item}
         <AccordionItem class="bg-pumpkin mb-2 rounded-lg">
           <span class=" text-white font-bold" slot="header">{item.question}</span>
