@@ -343,7 +343,7 @@
         </div>
         <div class="">
             {#if nyheder}
-                <div class="flex flex-col px-10 my-10 gap-4">
+                <div class="flex flex-col gap-4">
                     <form
                         on:submit|preventDefault={opretNyhed}
                         class="flex flex-col gap-4"

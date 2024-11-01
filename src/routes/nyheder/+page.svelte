@@ -1,9 +1,10 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Arkiv from "$lib/components/Arkiv.svelte";
+    import { CommentIcon } from "svelte-uicons/rounded/regular";
+
     /* Fetch af data */
     let newsData = [];
-    let allNews = []
     let isLoading = true;
     let error = null;
 
@@ -27,7 +28,6 @@
 </script>
 
 <section>
-
     <div class=" bg-platinum2">
         <div
             class="flex max-w-screen-lg justify-between flex-col md:flex-row mx-auto pt-24 pb-14 px-10 lg:px-0"
@@ -38,8 +38,10 @@
                 <div>
                     <a href="/" class="font-semibold text-xs">Forside</a>
                     <span class="font-bold text-lg select-none">></span>
-                    <a href="/nyheder/" class=" font-semibold text-md text-pumpkin">Nyheder</a
-                        >
+                    <a
+                        href="/nyheder/"
+                        class=" font-semibold text-md text-pumpkin">Nyheder</a
+                    >
                 </div>
             </div>
         </div>
@@ -47,12 +49,16 @@
 
     <div class="flex items-center justify-center gap-4">
         <div class="flex flex-col lg:flex-row items-center">
-            <div class="grid grid-cols-1 md:grid-cols-2 items-center mx-auto mb-10 lg:items-start justify-center gap-4 mt-20 cursor-pointer px-4">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 items-center mx-auto mb-10 lg:items-start justify-center gap-4 mt-20 cursor-pointer px-4"
+            >
                 {#each newsData
                     .sort((a, b) => new Date(b.received) - new Date(a.received))
                     .slice(0, 4) as item}
                     <a href="/nyheder/{item._id}">
-                        <div class="w-[400px] h-[375px] border rounded-lg shadow-lg hover:shadow-xl">
+                        <div
+                            class="w-[375px] h-[450px] border rounded-lg shadow-lg hover:shadow-xl"
+                        >
                             <img
                                 src={completePath + item.image}
                                 alt=""
@@ -63,15 +69,21 @@
                                 <p class="text-dimGray">
                                     {@html item.content.slice(0, 100)}...
                                 </p>
+
+                                <div class="border-t px-4 my-10 flex">
+                                    <div class="flex mt-4 items-center gap-4">
+
+                                        <CommentIcon size="16"  class=""/>
+                                        <span>{item.comments.length} Kommentar</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </a>
                 {/each}
             </div>
-    
-            <Arkiv/>
 
+            <Arkiv />
         </div>
     </div>
 </section>
-
